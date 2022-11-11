@@ -12,24 +12,24 @@ pipeline {
                 echo "Hello World"
             }
         }
-        stage('Fname') {
+        stage('FName') {
             steps {
-                echo "First Name:  ${params.Fname}"
+                echo "First Name:  ${params.FName}"
             }
         }
-        stage('Lname') {
+        stage('LName') {
             steps {
-                echo "Last Name:  ${params.Lname}"
+                echo "Last Name:  ${params.LName}"
             }
         }
-        stage('choice') {
+        stage('Classroom-Batch') {
             steps {
-                echo "Gender: ${params.Gender}"
+                echo "Gender: ${params.Classroom-Batch}"
             }
         }
-        stage('password') {
+        stage('Elective') {
             steps {
-                echo "Password: ${params.Password}"
+                echo "Password: ${params.Elective}"
             }
         }
     }
