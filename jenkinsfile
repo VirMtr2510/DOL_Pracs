@@ -1,0 +1,36 @@
+pipeline {
+    agent any 
+    parameters {
+        string(name: 'Fname')
+        string(name: 'Lname', defaultValue: 'Mhatre')
+        choice(name: 'Gender' , choices: ['Male','Female','Other'])
+        password(name: 'Password' , defaultValue: '1234')
+    }
+    stages {
+        stage('Hello'){
+            steps{
+                echo "Hello World"
+            }
+        }
+        stage('Fname') {
+            steps {
+                echo "First Name:  ${params.Fname}"
+            }
+        }
+        stage('Lname') {
+            steps {
+                echo "Last Name:  ${params.Lname}"
+            }
+        }
+        stage('choice') {
+            steps {
+                echo "Gender: ${params.Gender}"
+            }
+        }
+        stage('password') {
+            steps {
+                echo "Password: ${params.Password}"
+            }
+        }
+    }
+}
