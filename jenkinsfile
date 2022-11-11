@@ -4,7 +4,7 @@ pipeline {
         string(name: 'FName')
         string(name: 'LName', defaultValue: 'Mhatre')
         choice(name: 'Classroom-Batch' , choices: ['TIET-A1','TIET-A2','TIET-B1','TIET-B2'])
-        choice(name: 'Elective' , choices: ['Cyber', 'Green-IT'])
+        choice(name: 'Elective' , choices: ['Cyber','Green-IT'])
     }
     stages {
         stage('Hello'){
@@ -24,12 +24,12 @@ pipeline {
         }
         stage('Classroom-Batch') {
             steps {
-                echo "Gender: ${params.Classroom-Batch}"
+                echo "Classroom-Batch: ${params.Classroom-Batch}"
             }
         }
         stage('Elective') {
             steps {
-                echo "Password: ${params.Elective}"
+                echo "Elective: ${params.Elective}"
             }
         }
     }
