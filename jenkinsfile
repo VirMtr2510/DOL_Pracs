@@ -1,10 +1,10 @@
 pipeline {
     agent any 
     parameters {
-        string(name: 'Fname')
-        string(name: 'Lname', defaultValue: 'Mhatre')
-        choice(name: 'Gender' , choices: ['Male','Female','Other'])
-        password(name: 'Password' , defaultValue: '1234')
+        string(name: 'FName')
+        string(name: 'LName', defaultValue: 'Mhatre')
+        choice(name: 'Classroom-Batch' , choices: ['TIET-A1','TIET-A2','TIET-B1','TIET-B2'])
+        choice(name: 'Elective' , choices: ['Cyber', 'Green-IT'])
     }
     stages {
         stage('Hello'){
