@@ -1,10 +1,10 @@
 pipeline {
-    agent any 
+    agent any
     parameters {
-        string(name: 'FName')
-        string(name: 'LName', defaultValue: 'Mhatre')
-        choice(name: 'Classroom-Batch' , choices: ['TIET-A1','TIET-A2','TIET-B1','TIET-B2'])
-        choice(name: 'Elective' , choices: ['Cyber','Green-IT'])
+        string(name: 'Fname')
+        string(name: 'Lname', defaultValue: 'Mhatre')
+        choice(name: 'Gender' , choices: ['Male','Female','Other'])
+        password(name: 'Password' , defaultValue: '1234')
     }
     stages {
         stage('Hello'){
@@ -12,24 +12,24 @@ pipeline {
                 echo "Hello World"
             }
         }
-        stage('FName') {
+        stage('Fname') {
             steps {
-                echo "First Name:  ${params.FName}"
+                echo "First Name:  ${params.Fname}"
             }
         }
-        stage('LName') {
+        stage('Lname') {
             steps {
-                echo "Last Name:  ${params.LName}"
+                echo "Last Name:  ${params.Lname}"
             }
         }
-        stage('Classroom-Batch') {
+        stage('choice') {
             steps {
-                echo "Classroom-Batch: ${params.Classroom-Batch}"
+                echo "Gender: ${params.Gender}"
             }
         }
-        stage('Elective') {
+        stage('password') {
             steps {
-                echo "Elective: ${params.Elective}"
+                echo "Password: ${params.Password}"
             }
         }
     }
